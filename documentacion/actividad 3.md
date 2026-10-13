@@ -1,1 +1,58 @@
+ACTIVIDAD 3: BÚSQUEDA Y MODIFICACIÓN
 
+## Introducción
+Una vez que tenemos nuestra lista de solicitudes enlazada, es muy común que necesitemos buscar una solicitud específica por su código para revisar su información o actualizarla si el usuario lo requiere (por ejemplo, cambiar el detalle de un trámite). Como la lista no tiene índices numéricos directos como un vector, debemos recorrerla nodo por nodo hasta encontrar la coincidencia exacta.
+
+---
+
+## 1. Búsqueda de una solicitud
+Este algoritmo sirve para localizar un nodo dentro de la lista utilizando su atributo `codigo` como criterio de búsqueda. Se inicia desde la `cabeza` y se avanza mediante el apuntador `siguiente` hasta encontrar el código buscado o llegar al final (`NULL`).
+
+Algoritmo Buscar(codigoBuscado)
+Inicio
+    actual <- cabeza
+    Mientras actual <> NULL hacer
+        Si actual.codigo = codigoBuscado entonces
+            Retornar actual
+        Fin Si
+        actual <- actual.siguiente
+    Fin Mientras
+    Retornar NULL
+Fin
+
+¿Qué cambia en la lista? Absolutamente nada, la estructura de los nodos y las flechas se mantiene intacta, ya que solo es una operación de lectura. ¿Qué tan rápido es? O(n): En el peor de los casos (si el elemento está al final o no existe), el algoritmo debe recorrer toda la longitud de la lista.
+## 2. Modificación de una solicitud
+Permite cambiar el contenido de un trámite o solicitud una vez que ha sido localizado. Para lograrlo de forma limpia, este método reutiliza la lógica del algoritmo de búsqueda.
+
+Primero buscamos el nodo por su código; si el resultado no es nulo, sobrescribimos el campo `solicitud` con el nuevo texto proporcionado.
+
+Algoritmo ModificarSolicitud(codigoBuscado, nuevaSolicitud)
+Inicio
+    encontrado <- Buscar(codigoBuscado)
+    Si encontrado = NULL entonces
+        Retornar Falso
+    Fin Si
+    encontrado.solicitud <- nuevaSolicitud
+    Retornar Verdadero
+Fin
+
+¿Qué cambia en la lista? El campo `solicitud` del nodo encontrado cambia su valor por el nuevo texto actualizado, manteniendo su misma posición y sus enlaces intactos. ¿Qué tan rápido es? O(n): Su velocidad depende principalmente de la operación previa de búsqueda lineal.
+## Resultado al ejecutar el programa
+Al ejecutar las pruebas correspondientes a la Actividad 3 sobre nuestra lista de solicitudes, el comportamiento en la consola es el siguiente:
+
+=== ACTIVIDAD 3: BUSQUEDA Y MODIFICACION ===
+
+Lista original:
+[S001 | Matricula] -> [S002 | Constancia] -> [S003 | Certificados] -> [S004 | Consulta de notas] -> [S005 | Documentos] -> NULL
+
+--- Probando Busqueda (Buscando S003) ---
+¡Encontrado con exito! -> Código: S003 | Solicitud: Certificados
+
+--- Probando Modificacion (Modificando S003 a 'Certificado de Estudios') ---
+Estado: Modificacion realizada correctamente.
+
+Lista despues de la modificacion:
+[S001 | Matricula] -> [S002 | Constancia] -> [S003 | Certificado de Estudios] -> [S004 | Consulta de notas] -> [S005 | Documentos] -> NULL
+
+## Conclusión
+La búsqueda y la modificación son operaciones fundamentales para la gestión dinámica de datos en una lista enlazada. Aunque la búsqueda requiere un recorrido lineal por la estructura (O(n)) debido a que no podemos acceder directamente por posiciones de memoria, nos permite interactuar de manera segura con nodos específicos sin alterar el orden ni romper las referencias de los demás elementos de la fila.
