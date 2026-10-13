@@ -52,4 +52,33 @@ public class ListaSimple {
         nuevo.siguiente = actual.siguiente;
         actual.siguiente = nuevo;
     }
-}
+    
+    // Actividad 3: busqueda de una solicitud - O(n)
+    public PA2.Nodo buscar(String codigoBuscado) {
+        PA2.Nodo actual = cabeza;
+
+        while (actual != null) {
+            if (actual.codigo.equals(codigoBuscado)) {
+                return actual;
+            }
+            actual = actual.siguiente;
+        }
+
+        return null;
+    }
+
+    // Actividad 3: modificacion de una solicitud - O(n)
+    public boolean modificarSolicitud(
+            String codigoBuscado, String nuevaSolicitud) {
+
+        PA2.Nodo encontrado = buscar(codigoBuscado);
+
+        if (encontrado == null) {
+            return false;
+        }
+
+        encontrado.solicitud = nuevaSolicitud;
+        return true;
+    }
+} 
+
