@@ -1,4 +1,4 @@
-ACTIVIDAD 3: BÚSQUEDA Y MODIFICACIÓN
+ACTIVIDAD 3: BÚSQUEDA, MODIFICACIÓN Y ELIMINACIÓN
 
 ## Introducción
 Una vez que tenemos nuestra lista de solicitudes enlazada, es muy común que necesitemos buscar una solicitud específica por su código para revisar su información o actualizarla si el usuario lo requiere (por ejemplo, cambiar el detalle de un trámite). Como la lista no tiene índices numéricos directos como un vector, debemos recorrerla nodo por nodo hasta encontrar la coincidencia exacta.
@@ -56,3 +56,50 @@ Lista despues de la modificacion:
 
 ## Conclusión
 La búsqueda y la modificación son operaciones fundamentales para la gestión dinámica de datos en una lista enlazada. Aunque la búsqueda requiere un recorrido lineal por la estructura (O(n)) debido a que no podemos acceder directamente por posiciones de memoria, nos permite interactuar de manera segura con nodos específicos sin alterar el orden ni romper las referencias de los demás elementos de la fila.
+
+## 3. Eliminación de una solicitud
+
+Este algoritmo permite eliminar una solicitud de la lista utilizando su código como criterio. Primero comprueba si la lista está vacía. Si la solicitud que se desea eliminar está al inicio, se actualiza la referencia `cabeza` para que apunte al siguiente nodo. Si está en otra posición, se recorre la lista hasta encontrar el nodo anterior al que se quiere eliminar.
+
+Una vez localizado, se actualiza su apuntador `siguiente` para que apunte al nodo posterior al que se elimina. De esta manera, los demás nodos continúan conectados.
+
+**Algoritmo Eliminar(codigoBuscado)**
+
+Inicio
+
+- Si cabeza = NULL entonces
+  - Retornar Falso
+- Fin Si
+- Si cabeza.codigo = codigoBuscado entonces
+  - cabeza <- cabeza.siguiente
+  - Retornar Verdadero
+- Fin Si
+- actual <- cabeza
+- Mientras actual.siguiente <> NULL y actual.siguiente.codigo <> codigoBuscado hacer
+  - actual <- actual.siguiente
+- Fin Mientras
+- Si actual.siguiente = NULL entonces
+  - Retornar Falso
+- Fin Si
+- actual.siguiente <- actual.siguiente.siguiente
+- Retornar Verdadero
+
+Fin
+
+¿Qué cambia en la lista? El nodo seleccionado deja de formar parte de la secuencia. Los demás nodos mantienen su orden y continúan enlazados.
+
+¿Qué tan rápido es? La eliminación del primer nodo tiene una complejidad de O(1), porque solo se actualiza `cabeza`. La eliminación por código tiene una complejidad de O(n) en el peor caso, porque es necesario recorrer la lista para localizar el nodo que se eliminará.
+
+## 4. Resultado al ejecutar la eliminación
+
+Para comprobar el funcionamiento, se eliminó la solicitud S004, correspondiente a «Consulta de notas». El programa confirmó que la operación se realizó correctamente.
+
+Antes de eliminar:
+
+[S001 | Matricula] -> [S002 | Constancia] -> [S003 | Certificado de Estudios] -> [S004 | Consulta de notas] -> [S005 | Documentos] -> NULL
+
+Después de eliminar:
+
+[S001 | Matricula] -> [S002 | Constancia] -> [S003 | Certificado de Estudios] -> [S005 | Documentos] -> NULL
+
+Como se observa, S003 queda enlazado directamente con S005, sin perder la conexión con el resto de la lista.
