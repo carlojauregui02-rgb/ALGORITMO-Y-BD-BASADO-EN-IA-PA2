@@ -1,6 +1,6 @@
-#ACTIVIDAD 4: APLICACIONES DE LAS LISTAS DOBLEMENTE ENLAZADAS Y CIRCULARES
+ACTIVIDAD 4: APLICACIONES DE LAS LISTAS DOBLEMENTE ENLAZADAS Y CIRCULARES
 
-##Introducción
+#Introducción
 
 Las listas enlazadas son estructuras de datos que permiten almacenar elementos mediante nodos conectados entre sí. Dependiendo de la forma en que se establecen sus enlaces, se pueden utilizar para resolver diferentes problemas.
 
@@ -49,7 +49,7 @@ Justificación
 
 Esta estructura permite recorrer continuamente a los técnicos sin que el proceso termine en un nodo nulo. Después de llegar al último técnico, el sistema puede regresar al primero y continuar con la rotación. Para garantizar una distribución justa, el sistema también debe considerar la disponibilidad y la carga de trabajo de cada técnico.
 
-##Comparación de las estructuras
+Comparación de las estructuras
 
 Lista simplemente enlazada: Permite avanzar en una sola dirección, de un nodo al siguiente.
 
@@ -59,6 +59,6 @@ Lista circular: Conecta el último nodo con el primero, permitiendo repetir el r
 
 Conclusión técnica: La elección de una estructura depende estrictamente de las necesidades del sistema: navegación en ambos sentidos para las listas dobles y recorridos repetitivos para las circulares.
 
-##Conclusiones
+Conclusiones
 
 Las listas doblemente enlazadas y circulares ofrecen alternativas eficientes y útiles para organizar la información en un sistema de gestión de solicitudes. La lista doble facilita la navegación bidireccional entre solicitudes, mientras que la lista circular optimiza la organización de procesos rotativos. En consecuencia, la estructura idónea siempre debe elegirse de acuerdo con el problema que se desea resolver y las operaciones clave que el sistema necesite ejecutar.
