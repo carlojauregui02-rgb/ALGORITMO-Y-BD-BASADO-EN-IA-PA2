@@ -1,64 +1,105 @@
-# ACTIVIDAD 4 APLICACIONES DE LAS LISTAS  DOBLEMENTE ENLAZADAS Y CIRCULARES
+# ACTIVIDAD 4: LISTAS DOBLES Y CIRCULARES
 
-## Introducción
+## 1. Caso de uso de una lista doblemente enlazada
 
-Las listas enlazadas son estructuras de datos que permiten almacenar elementos mediante nodos conectados entre sí. Dependiendo de la forma en que se establecen sus enlaces, se pueden utilizar para resolver diferentes problemas.
+### Situación: Gestión de solicitudes administrativas
 
-En esta actividad se presentan dos casos prácticos:
+En una institución educativa se necesita gestionar solicitudes de los estudiantes, como matrículas, constancias, certificados, consultas de notas y documentos. El personal administrativo necesita revisar las solicitudes tanto hacia adelante como hacia atrás.
 
-El uso de una lista doblemente enlazada para consultar solicitudes de servicio.
+La lista doblemente enlazada es adecuada para este caso porque cada nodo contiene una referencia al nodo anterior y otra al siguiente, lo que permite recorrer la información en ambas direcciones.
 
-El uso de una lista circular para organizar la asignación rotativa de solicitudes a técnicos.
+## 2. Diagrama de la lista doblemente enlazada
 
-## Caso práctico de una lista doblemente enlazada
+Cada nodo tiene una conexión hacia adelante y otra hacia atrás.
 
-Situación planteada
+```text
+             Lista doblemente enlazada
 
-En un sistema de gestión de solicitudes de servicio, los usuarios necesitan consultar sus solicitudes anteriores y posteriores. Para resolver esta necesidad, se propone utilizar una lista doblemente enlazada.
+       Anterior                 Siguiente
+          ←                         →
+      ┌─────────┐    ┌─────────┐    ┌──────────┐
+NULL  │  S001   │ ⇄  │  S002   │ ⇄  │  S003    │ NULL
+      │ Matrícula│    │Constancia│   │Certificados│
+      └─────────┘    └─────────┘    └──────────┘
+```
 
-## Funcionamiento
+### Funcionamiento
 
-Cada nodo representa una solicitud y contiene sus datos, una referencia al nodo anterior y otra al nodo siguiente.
+- Cada nodo almacena el código y el nombre de la solicitud.
+- El enlace siguiente permite avanzar al próximo nodo.
+- El enlace anterior permite regresar al nodo previo.
+- La lista puede recorrerse desde el inicio hasta el final y desde el final hasta el inicio.
 
-Representación básica:
+**Ventaja:** facilita la navegación en ambas direcciones sin tener que comenzar nuevamente desde el primer nodo.
 
-NULL ← [Solicitud 101] ⇄ [Solicitud 102] ⇄ [Solicitud 103] → NULL
+## 3. Caso de uso de una lista circular
 
+### Situación: Atención de solicitudes por turnos
 
-## Justificación
+Una institución educativa tiene varias solicitudes pendientes de revisión. El personal administrativo desea revisarlas continuamente por turnos, de modo que, después de revisar la última solicitud, pueda volver a la primera.
 
-Esta estructura es adecuada porque permite avanzar y retroceder entre las solicitudes. Si el usuario desea regresar desde la Solicitud 103 hasta la 102, puede hacerlo de forma directa mediante la referencia al nodo anterior. En una lista simplemente enlazada, habría sido necesario recorrer la estructura desde el inicio para localizar el nodo previo.
+La lista circular es adecuada porque el último nodo apunta al primero, formando un ciclo.
 
-## Caso práctico de una lista circular
+## 4. Diagrama de la lista circular
 
-Situación planteada
+```text
+             Lista circular
 
-En una empresa que administra solicitudes de servicio, existen varios técnicos que reciben solicitudes por turnos. Para mantener una asignación rotativa, se propone utilizar una lista circular.
+          ┌─────────────────────┐
+          ↓                     │
+      ┌─────────┐    ┌─────────┐ │
+      │  S001   │ →  │  S002   │ │
+      │ Matrícula│    │Constancia│ │
+      └─────────┘    └─────────┘ │
+          ↑                      ↓
+      ┌─────────┐    ┌──────────┐
+      │  S004   │ ←  │  S003    │
+      │ Consulta│    │Certificados│
+      │ de notas│    └──────────┘
+      └─────────┘
+```
 
-## Funcionamiento
+El recorrido continúa y regresa al nodo S001.
 
-Cada nodo representa a un técnico. El último nodo apunta nuevamente al primero, permitiendo repetir el recorrido de forma indefinida.
+### Funcionamiento
 
-Representación básica:
+- Cada nodo almacena una solicitud y una referencia al siguiente nodo.
+- El último nodo enlaza nuevamente con el primero.
+- El recorrido puede continuar repetidamente.
+- Para mostrar cada solicitud una sola vez, el programa debe detectar cuándo regresa al nodo inicial.
 
-[Técnico 1] → [Técnico 2] → [Técnico 3] → [Técnico 4]
-     ↑________________________________________________|
+**Ventaja:** permite organizar turnos de revisión continua sin que el recorrido termine necesariamente en el último nodo.
 
+## 5. Comparación con una lista simplemente enlazada
 
-## Justificación
+| Característica | Lista simple | Lista doble | Lista circular |
+|---|---|---|---|
+| Enlaces por nodo | Uno al siguiente | Al anterior y al siguiente | Al siguiente |
+| Recorrido hacia adelante | Sí | Sí | Sí |
+| Recorrido hacia atrás | No directamente | Sí | No directamente |
+| Regresa automáticamente al inicio | No | No | Sí |
+| Uso apropiado | Recorrido secuencial | Navegación en ambas direcciones | Turnos continuos |
 
-Esta estructura permite recorrer continuamente a los técnicos sin que el proceso termine en un nodo nulo. Después de llegar al último técnico, el sistema puede regresar al primero y continuar con la rotación. Para garantizar una distribución justa, el sistema también debe considerar la disponibilidad y la carga de trabajo de cada técnico.
+## 6. Justificación de las estructuras elegidas
 
-## Comparación de las estructuras
+La lista doblemente enlazada se seleccionó para la gestión de solicitudes administrativas porque permite consultar los registros en ambas direcciones. Esto facilita revisar solicitudes anteriores y posteriores.
 
-- Lista simplemente enlazada: Permite avanzar en una sola dirección, de un nodo al siguiente.
+La lista circular se eligió para la atención por turnos porque permite pasar de la última solicitud a la primera y repetir el proceso. Es útil cuando se necesita un recorrido continuo.
 
-- Lista doblemente enlazada: Permite avanzar y retroceder gracias a que cada nodo mantiene dos referencias.
+Ambas estructuras ofrecen ventajas frente a la lista simplemente enlazada según las necesidades del sistema. Sin embargo, la lista doble utiliza referencias adicionales y la lista circular requiere controlar cuidadosamente el recorrido para evitar ciclos infinitos.
 
-- Lista circular: Conecta el último nodo con el primero, permitiendo repetir el recorrido de manera cíclica.
+## 7. Conclusión
 
-Conclusión técnica: La elección de una estructura depende estrictamente de las necesidades del sistema: navegación en ambos sentidos para las listas dobles y recorridos repetitivos para las circulares.
+Las listas doblemente enlazadas y circulares son estructuras útiles para organizar información dinámica.
 
-## Conclusiones
+La lista doble permite desplazarse hacia adelante y hacia atrás, mientras que la lista circular facilita los procesos repetitivos y la atención por turnos.
 
-Las listas doblemente enlazadas y circulares ofrecen alternativas eficientes y útiles para organizar la información en un sistema de gestión de solicitudes. La lista doble facilita la navegación bidireccional entre solicitudes, mientras que la lista circular optimiza la organización de procesos rotativos. En consecuencia, la estructura idónea siempre debe elegirse de acuerdo con el problema que se desea resolver y las operaciones clave que el sistema necesite ejecutar.
+La elección de cada estructura depende del funcionamiento que se necesita implementar y de la forma en que se desea recorrer los datos.
+
+## 8. Repositorio
+
+**Actividad:** Actividad 4 – Listas dobles y circulares.
+
+**Tema:** Estructuras de datos dinámicas.
+
+**Contenido:** Casos de uso, diagramas, funcionamiento, comparación y justificación de las estructuras.
