@@ -122,6 +122,7 @@ Las evidencias se encuentran organizadas en la carpeta `evidencias` del reposito
 **Conclusión 4:** Al desarrollar la eliminación de nodos, comprendimos cómo retirar una solicitud y actualizar los enlaces para mantener la continuidad de la lista. También reconocimos la importancia de considerar la posición del nodo que se desea eliminar.
 
 **Conclusión 5:** Al desarrollar la solución de gestión de solicitudes, comprendimos cómo aplicar las estructuras de datos dinámicas para organizar información y realizar operaciones de manera ordenada. Asimismo, reforzamos nuestros conocimientos de programación y la importancia del trabajo en equipo.
+
 ---
 
 **Última actualización:** 14/10/2026
