@@ -1,7 +1,7 @@
 package pa2;
 
 // Actividad 2 - Recorrido e insercion
-// Usa el Nodo de la Actividad 1 (PA2.Nodo: codigo, solicitud, siguiente)
+// Usa el Nodo de la Actividad 1 (Actividad1.Nodo: codigo, solicitud, siguiente)
 public class ListaSimple {
 
     Actividad1.Nodo cabeza;
@@ -78,6 +78,39 @@ public class ListaSimple {
         }
 
         encontrado.solicitud = nuevaSolicitud;
+        return true;
+    }
+    
+    // Actividad 3: eliminación de una solicitud - O(n)
+    public boolean eliminar(String codigoBuscado) {
+
+        // Caso 1: la lista está vacía
+        if (cabeza == null) {
+            return false;
+        }
+
+        // Caso 2: el nodo que se eliminará es el primero
+        if (cabeza.codigo.equals(codigoBuscado)) {
+            cabeza = cabeza.siguiente;
+            return true;
+        }
+
+        // Caso 3: buscar el nodo anterior al que se eliminará
+        Actividad1.Nodo actual = cabeza;
+
+        while (actual.siguiente != null
+                && !actual.siguiente.codigo.equals(codigoBuscado)) {
+            actual = actual.siguiente;
+        }
+
+        // El código no existe en la lista
+        if (actual.siguiente == null) {
+            return false;
+        }
+
+        // Reajustar el enlace para excluir el nodo
+        actual.siguiente = actual.siguiente.siguiente;
+
         return true;
     }
 } 

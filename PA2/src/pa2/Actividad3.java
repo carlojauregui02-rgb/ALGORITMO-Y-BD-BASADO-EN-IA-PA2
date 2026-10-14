@@ -21,7 +21,7 @@ public class Actividad3 {
         System.out.println("\n--- Probando Busqueda (Buscando S003) ---");
         Actividad1.Nodo encontrado = solicitudes.buscar("S003");
         if (encontrado != null) {
-            System.out.println("¡Encontrado con exito! -> Código: " + encontrado.codigo + " | Solicitud: " + encontrado.solicitud);
+            System.out.println("Encontrado con exito -> Codigo: " + encontrado.codigo + " | Solicitud: " + encontrado.solicitud);
         } else {
             System.out.println("No se encontro el codigo.");
         }
@@ -39,5 +39,22 @@ public class Actividad3 {
         // 4. Mostrar la lista final con los cambios aplicados
         System.out.println("\nLista despues de la modificacion:");
         solicitudes.recorrer();
+        
+        // 5. Probar la eliminación
+        System.out.println("\n--- Probando Eliminacion (Eliminando S004) ---");
+
+        boolean eliminado = solicitudes.eliminar("S004");
+
+        if (eliminado) {
+            System.out.println("Estado: Eliminacion realizada correctamente.");
+        } else {
+            System.out.println("Estado: No se encontro el codigo para eliminar.");
+        }
+
+        // 6. Mostrar la lista final
+        System.out.println("\nLista despues de la eliminacion:");
+        solicitudes.recorrer();
+        
+
     }
 }
