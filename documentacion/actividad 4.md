@@ -51,11 +51,11 @@ Esta estructura permite recorrer continuamente a los técnicos sin que el proces
 
 ## Comparación de las estructuras
 
-Lista simplemente enlazada: Permite avanzar en una sola dirección, de un nodo al siguiente.
+- Lista simplemente enlazada: Permite avanzar en una sola dirección, de un nodo al siguiente.
 
-Lista doblemente enlazada: Permite avanzar y retroceder gracias a que cada nodo mantiene dos referencias.
+- Lista doblemente enlazada: Permite avanzar y retroceder gracias a que cada nodo mantiene dos referencias.
 
-Lista circular: Conecta el último nodo con el primero, permitiendo repetir el recorrido de manera cíclica.
+- Lista circular: Conecta el último nodo con el primero, permitiendo repetir el recorrido de manera cíclica.
 
 Conclusión técnica: La elección de una estructura depende estrictamente de las necesidades del sistema: navegación en ambos sentidos para las listas dobles y recorridos repetitivos para las circulares.
 
