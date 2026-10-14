@@ -33,25 +33,25 @@ Se desarrolla una solución basada en estructuras dinámicas para representar la
 
 [Aquí va el desarrollo o resumen de la Actividad 1.]
 
-**Documentación complementaria:** [Ver Actividad 1](documentacion/actividad1.md)
+**Documentación complementaria:** [Ver Actividad 1](documentacion/actividad%201.md)
 
 ### Actividad 2. Recorrido e inserción
 
 [Aquí va el desarrollo o resumen de la Actividad 2.]
 
-**Documentación complementaria:** [Ver Actividad 2](documentacion/actividad2.md)
+**Documentación complementaria:** [Ver Actividad 2](documentacion/actividad%202.md)
 
 ### Actividad 3. Búsqueda, modificación y eliminación
 
 [Aquí va el desarrollo o resumen de la Actividad 3.]
 
-**Documentación complementaria:** [Ver Actividad 3](documentacion/actividad3.md)
+**Documentación complementaria:** [Ver Actividad 3](documentacion/actividad%203.md)
 
 ### Actividad 4. Desarrollo de la actividad
 
 [Aquí va el desarrollo o resumen de la Actividad 4.]
 
-**Documentación complementaria:** [Ver Actividad 4](documentacion/actividad4.md)
+**Documentación complementaria:** [Ver Actividad 4](documentacion/actividad%204.md)
 
 ## 3. Cómo ejecutar o revisar
 
@@ -84,8 +84,8 @@ En esta sección se presentan las capturas de pantalla que evidencian el desarro
 - [Actividad 1](evidencias/actividad1.png)
 - [Actividad 2](evidencias/actividad2.png)
 - [Actividad 3 – Parte 1](evidencias/actividad3_parte1.png)
-- [Actividad 3 – Parte 1](evidencias/actividad3_parte2.png)
-- [Actividad 4](evidencias/actividad4.png)
+- [Actividad 3 – Parte 2](evidencias/actividad3_parte2.png)
+- [Actividad 4](evidencias/Actividad4.png)
 
 Las evidencias se encuentran organizadas en la carpeta `evidencias` del repositorio.
 
