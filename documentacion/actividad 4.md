@@ -95,11 +95,3 @@ Las listas doblemente enlazadas y circulares son estructuras útiles para organi
 La lista doble permite desplazarse hacia adelante y hacia atrás, mientras que la lista circular facilita los procesos repetitivos y la atención por turnos.
 
 La elección de cada estructura depende del funcionamiento que se necesita implementar y de la forma en que se desea recorrer los datos.
-
-## 8. Repositorio
-
-**Actividad:** Actividad 4 – Listas dobles y circulares.
-
-**Tema:** Estructuras de datos dinámicas.
-
-**Contenido:** Casos de uso, diagramas, funcionamiento, comparación y justificación de las estructuras.
