@@ -1,6 +1,6 @@
 ACTIVIDAD 4: APLICACIONES DE LAS LISTAS DOBLEMENTE ENLAZADAS Y CIRCULARES
 
-#Introducción
+Introducción
 
 Las listas enlazadas son estructuras de datos que permiten almacenar elementos mediante nodos conectados entre sí. Dependiendo de la forma en que se establecen sus enlaces, se pueden utilizar para resolver diferentes problemas.
 
