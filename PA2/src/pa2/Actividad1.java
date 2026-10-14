@@ -4,7 +4,7 @@
  */
 package pa2;
 
-public class PA2 {
+public class Actividad1 {
 
     // Estructura de cada nodo
     static class Nodo {

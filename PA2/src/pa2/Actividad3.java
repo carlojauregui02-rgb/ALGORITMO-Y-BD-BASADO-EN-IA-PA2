@@ -19,7 +19,7 @@ public class Actividad3 {
 
         // 2. Probar la Búsqueda
         System.out.println("\n--- Probando Busqueda (Buscando S003) ---");
-        PA2.Nodo encontrado = solicitudes.buscar("S003");
+        Actividad1.Nodo encontrado = solicitudes.buscar("S003");
         if (encontrado != null) {
             System.out.println("¡Encontrado con exito! -> Código: " + encontrado.codigo + " | Solicitud: " + encontrado.solicitud);
         } else {
