@@ -101,7 +101,7 @@ Las evidencias se encuentran organizadas en la carpeta `evidencias` del reposito
 
 ## 6. Video de exposición
 
-**Video de YouTube:** [[Enlace Video](https://youtu.be/j6tmQrhMwKc)]()
+**Video de YouTube:** [[ENLACE VIDEO](https://youtu.be/j6tmQrhMwKc)]()
 
 **Contenido del video:**
 
